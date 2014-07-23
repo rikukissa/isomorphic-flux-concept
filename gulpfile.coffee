@@ -10,7 +10,6 @@ source     = require 'vinyl-source-stream'
 streamify  = require 'gulp-streamify'
 rename     = require 'gulp-rename'
 uglify     = require 'gulp-uglify'
-coffeeify  = require 'coffeeify'
 ecstatic   = require 'ecstatic'
 livereload = require 'gulp-livereload'
 plumber    = require 'gulp-plumber'
@@ -20,7 +19,7 @@ production = process.env.NODE_ENV is 'production'
 
 paths =
   scripts:
-    source: './src/coffee/main.coffee'
+    source: './src/js/main.js'
     destination: './public/js/'
     filename: 'bundle.js'
   templates:
@@ -45,7 +44,7 @@ gulp.task 'scripts', ->
 
   bundle = browserify
     entries: [paths.scripts.source]
-    extensions: ['.coffee']
+    extensions: ['.jsx']
 
   build = bundle.bundle(debug: not production)
     .on 'error', handleError
@@ -95,7 +94,7 @@ gulp.task "watch", ->
 
   bundle = watchify
     entries: [paths.scripts.source]
-    extensions: ['.coffee']
+    extensions: ['.jsx']
 
   bundle.on 'update', ->
     build = bundle.bundle(debug: not production)

@@ -34,14 +34,15 @@
     "gulp": "~3.8.1",
     "watchify": "~0.10.2",
     "ecstatic": "~0.5.3",
-    "gulp-minify-css": "~0.3.5"
+    "gulp-minify-css": "~0.3.5",
+    "reactify": "~0.14.0"
   },
-  "browser": {},
-  "browserify-shim": {},
+  "browser": {
+    "react": "./bower_components/react/react.js"
+  },
   "browserify": {
     "transform": [
-      "coffeeify",
-      "browserify-shim"
+      "reactify"
     ]
   }
 }
