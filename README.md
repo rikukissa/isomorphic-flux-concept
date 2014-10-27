@@ -4,7 +4,7 @@
 ### What it does
 * [Jade](http://jade-lang.com) files to HTML
 * [Stylus](http://learnboost.github.io/stylus) files to CSS
-* [CoffeeScript](http://coffeescript.org/) files to Javascript through [browserify](http://browserify.org/)
+* [JSX](http://facebook.github.io/react/docs/jsx-in-depth.html) files to Javascript through [browserify](http://browserify.org/)
     * You are able to use 'require' in your client-side code
 * Serves your static files to localhost:9001
 * Reloads your browser with LiveReload when files change
@@ -58,23 +58,6 @@ If this does not work, you may need to add the pakcage manually and shim it, lik
     ...
 
 Read more about it [here](https://github.com/thlorenz/browserify-shim).
-
-### Using JavaScript instead of CoffeeScript
-Remove coffeeify transform from package.json file (browserify.transform field)
-``````
-"browserify": {
-  "transform": ["browserify-shim"]
-}
-``````
-
-and change the ".coffee" extension to ".js" from gulpfile.coffee
-``````
-paths =
-  scripts:
-    source: './src/coffee/main.js'
-`````
-
-You also can change the directory name to scripts or what ever.
 
 ### Enable LiveReload
 Install [LiveReload for Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en)
