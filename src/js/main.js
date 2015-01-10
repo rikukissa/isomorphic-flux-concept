@@ -1,5 +1,5 @@
-/*jslint browser: true */
 'use strict';
+var React = require('react');
+var App = require('components/App');
 
-require('./app');
-
+React.render(<App />, document.body);

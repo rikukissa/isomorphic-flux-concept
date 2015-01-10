@@ -1,11 +1,11 @@
 browserify = require 'browserify'
 chalk      = require 'chalk'
 CSSmin     = require 'gulp-minify-css'
-ecstatic   = require 'ecstatic'
 gulp       = require 'gulp'
 gutil      = require 'gulp-util'
 jade       = require 'gulp-jade'
 livereload = require 'gulp-livereload'
+nodemon    = require 'gulp-nodemon'
 path       = require 'path'
 prefix     = require 'gulp-autoprefixer'
 prettyTime = require 'pretty-hrtime'
@@ -21,20 +21,16 @@ config =
   scripts:
     source: './src/js/main.js'
     extensions: ['.jsx']
-    destination: './public/js/'
+    destination: './client/js/'
     filename: 'bundle.js'
-  templates:
-    source: './src/jade/*.jade'
-    watch: './src/jade/*.jade'
-    destination: './public/'
   styles:
-    source: './src/stylus/style.styl'
-    watch: './src/stylus/*.styl'
-    destination: './public/css/'
+    source: './src/styles/style.styl'
+    watch: './src/styles/*.styl'
+    destination: './client/css/'
   assets:
     source: './src/assets/**/*.*'
     watch: './src/assets/**/*.*'
-    destination: './public/'
+    destination: './client/'
 
 handleError = (err) ->
   gutil.log err
@@ -57,17 +53,6 @@ gulp.task 'scripts', ->
   build
     .pipe gulp.dest config.scripts.destination
 
-gulp.task 'templates', ->
-  pipeline = gulp
-    .src config.templates.source
-    .pipe(jade(pretty: not production))
-    .on 'error', handleError
-    .pipe gulp.dest config.templates.destination
-
-  pipeline = pipeline.pipe livereload(auto: false) unless production
-
-  pipeline
-
 gulp.task 'styles', ->
   styles = gulp
     .src config.styles.source
@@ -88,14 +73,14 @@ gulp.task 'assets', ->
     .pipe gulp.dest config.assets.destination
 
 gulp.task 'server', ->
-  require('http')
-    .createServer ecstatic root: path.join(__dirname, 'public')
-    .listen 9001
-
+  nodemon
+    script: 'src/server'
+    ext: 'js'
+    watch: 'src'
+    nodeArgs: ['--harmony']
 gulp.task 'watch', ->
   livereload.listen()
 
-  gulp.watch config.templates.watch, ['templates']
   gulp.watch config.styles.watch, ['styles']
   gulp.watch config.assets.watch, ['assets']
 
@@ -122,8 +107,6 @@ gulp.task 'watch', ->
 
   .emit 'update'
 
-gulp.task 'no-js', ['templates', 'styles', 'assets']
+gulp.task 'no-js', ['styles', 'assets']
 gulp.task 'build', ['scripts', 'no-js']
-# scripts and watch conflict and will produce invalid js upon first run
-# which is why the no-js task exists.
 gulp.task 'default', ['watch', 'no-js', 'server']

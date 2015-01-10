@@ -1,16 +1,26 @@
-# Project template for [gulp.js](http://gulpjs.com/)
-<img width="114px" height="257px" align="right" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png"/>
+# Chat client
 
-### What it does
-* [Jade](http://jade-lang.com) files to HTML
+### Proposed technologies
+* ES6 JavaScript. Transformed to ES5 for browser-code
+* [React](http://facebook.github.io/react/) For UI components
+* [Jest](https://facebook.github.io/jest/) for testing UI components
+* [Flux](https://facebook.github.io/flux/) software architecture on both frontend and backend
+* [Flow + flotate](https://github.com/jareware/flotate) for type annotations
 * [Stylus](http://learnboost.github.io/stylus) files to CSS
-* [JSX](http://facebook.github.io/react/docs/jsx-in-depth.html) files to Javascript through [browserify](http://browserify.org/)
-    * You are able to use 'require' in your client-side code
-* Serves your static files to localhost:9001
-* Reloads your browser with LiveReload when files change
+* [Jade](http://jade-lang.com) templates
+* [Koa.js](http://koajs.com/) for web framework
+* (?) Database
+
+## Proposed architecture
+* [Flux](https://facebook.github.io/flux/) or something similar
+* Isomorphic components
+  * can be run on both frontend and backend
+* Modular structure
+* Extendable with modules and custom components
+* Adapters for usage with multiple services (e.g IRC)
 
 ## Getting things up and running
-- Install [Node.js](http://nodejs.org)
+- Install [Node.js](http://nodejs.org) >= 0.11.13
 
 ```
  git clone git@github.com:leonidas/gulp-project-template.git <your project name>
@@ -35,27 +45,10 @@ Minification, uglification and other tasks you're expected to run before deployi
     NODE_ENV=production npm run build
 
 ## Development guidelines
-* **public** - directory should be dedicated only to compiled/copied files from **src** - directory.
+* **client** - directory should be dedicated only to compiled/copied files from **src** - directory.
   It should be possible to delete directory completely and after **npm start** or **npm run build** everything should be as they were before the deletion.
 * All backend dependencies should be installed with **npm**. Browser dependencies should be installed with **bower** or with **npm**.
 
-### Using JavaScript instead of CoffeeScript
-Remove coffeeify transform from package.json file (browserify.transform field)
-```diff
-    "transform": [
--     "coffeeify",
-      "debowerify",
-      "deamdify"
-    ]
-```
-
-and change the ".coffee" extension to ".js" from gulpfile.coffee
-```diff
-config =
-  scripts:
--   source: './src/coffee/main.coffee'
--   extensions: ['.coffee']
-+   source: './src/js/main.js'
-+   extensions: ['.js']
-```
-You also can change the directory name to scripts or what ever.
+## Resources
+https://medium.com/node-js-javascript/working-without-frameworks-part-1-b948f281f782
+https://github.com/JustinDrake/node-es6-examples
