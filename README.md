@@ -17,8 +17,9 @@
   * can be run on both frontend and backend
 * Modular structure
 * Extendable with modules and custom components
-* Adapters for usage with multiple services (e.g IRC)
+* Adapters for usage with multiple services (e.g IRC) 
 
+![Flowchart](https://raw.githubusercontent.com/rikukissa/chat-client/master/meta/flow.png)
 ## Getting things up and running
 - Install [Node.js](http://nodejs.org) >= 0.11.13
 
