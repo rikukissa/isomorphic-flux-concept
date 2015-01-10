@@ -21,7 +21,11 @@
     "co-views": "~0.2.0",
     "then-jade": "~2.2.1",
     "koa-static": "~1.4.8",
-    "react": "~0.12.2"
+    "react": "~0.12.2",
+    "socket.io": "~1.2.1",
+    "socket.io-client": "~1.2.1",
+    "6to5": "~2.9.4",
+    "lodash": "~2.4.1"
   },
   "devDependencies": {
     "bower": "~1.3.5",
@@ -44,12 +48,18 @@
     "watchify": "~2.0.0",
     "6to5ify": "~3.1.2",
     "gulp-nodemon": "~1.0.5",
-    "reactify": "~0.17.1"
+    "reactify": "~0.17.1",
+    "browserify-shim": "~3.8.2"
   },
+  "browser": {
+    "socket.io": "./node_modules/socket.io-client/index.js"
+  },
+  "browserify-shim": {},
   "browserify": {
     "transform": [
       "reactify",
       "6to5ify",
+      "browserify-shim",
       "debowerify",
       "deamdify"
     ]

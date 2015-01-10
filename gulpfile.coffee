@@ -33,7 +33,8 @@ config =
     destination: './client/'
 
 handleError = (err) ->
-  gutil.log err
+  console.log err.name
+  console.log err.message
   gutil.beep()
   this.emit 'end'
 
@@ -75,9 +76,10 @@ gulp.task 'assets', ->
 gulp.task 'server', ->
   nodemon
     script: 'src/server'
-    ext: 'js'
-    watch: 'src'
+    ext: 'js jsx'
+    watch: 'src/'
     nodeArgs: ['--harmony']
+    ignore: []
 gulp.task 'watch', ->
   livereload.listen()
 
