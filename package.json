@@ -16,16 +16,18 @@
     "template"
   ],
   "dependencies": {
+    "6to5": "~2.9.4",
+    "co-views": "~0.2.0",
+    "flux": "^2.0.1",
     "koa": "~0.14.0",
     "koa-route": "~2.4.0",
-    "co-views": "~0.2.0",
-    "then-jade": "~2.2.1",
     "koa-static": "~1.4.8",
+    "lodash": "~2.4.1",
+    "node-jsx": "^0.12.4",
     "react": "~0.12.2",
     "socket.io": "~1.2.1",
     "socket.io-client": "~1.2.1",
-    "6to5": "~2.9.4",
-    "lodash": "~2.4.1"
+    "then-jade": "~2.2.1"
   },
   "devDependencies": {
     "bower": "~1.3.5",
