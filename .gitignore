@@ -1,4 +1,4 @@
-node_modules
+/node_modules
 bower_components
 client
 .DS_Store
