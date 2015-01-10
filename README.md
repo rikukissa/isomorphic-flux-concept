@@ -1,7 +1,6 @@
 # Example of an isomorphic [Flux](https://facebook.github.io/flux/)+[React](http://facebook.github.io/react/) application
 
-![Flowchart](https://raw.githubusercontent.com/rikukissa/chat-client/master/meta/websocket-flow.png)
-
+![Flowchart](https://raw.githubusercontent.com/rikukissa/isomorphic-flux-concept/master/meta/websocket-flow.png)
 
 ## Getting things up and running
 - Install [Node.js](http://nodejs.org) >= 0.11.13
