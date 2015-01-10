@@ -53,9 +53,6 @@
     "reactify": "~0.17.1",
     "browserify-shim": "~3.8.2"
   },
-  "browser": {
-    "socket.io": "./node_modules/socket.io-client/index.js"
-  },
   "browserify-shim": {},
   "browserify": {
     "transform": [

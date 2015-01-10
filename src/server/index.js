@@ -33,7 +33,7 @@ var App = require('components/App.jsx');
 
 app.use(route.get('/', function*() {
   this.body = yield render('index', {
-    reactApp: React.renderToString(App()),
+    reactApp: React.renderToString(React.createElement(App)),
     state: JSON.stringify({
       appStore: require('stores/appStore').getData()
     })
