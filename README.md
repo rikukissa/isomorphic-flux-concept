@@ -1,5 +1,7 @@
 # Example of an isomorphic [Flux](https://facebook.github.io/flux/)+[React](http://facebook.github.io/react/) application
 
+![Demo](https://raw.githubusercontent.com/rikukissa/isomorphic-flux-concept/master/meta/demo.gif)
+
 ![Flowchart](https://raw.githubusercontent.com/rikukissa/isomorphic-flux-concept/master/meta/websocket-flow.png)
 
 * Both browser & server share [the same code](https://github.com/rikukissa/isomorphic-flux-concept/tree/master/src/node_modules).
