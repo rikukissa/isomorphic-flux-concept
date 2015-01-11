@@ -79,7 +79,7 @@ gulp.task 'server', ->
     ext: 'js jsx'
     watch: 'src/'
     nodeArgs: ['--harmony']
-    ignore: []
+    ignore: ['.git', '/node_modules', 'bower_components']
 gulp.task 'watch', ->
   livereload.listen()
 
