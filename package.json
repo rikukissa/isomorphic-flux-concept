@@ -1,10 +1,10 @@
 {
-  "name": "chat-client",
+  "name": "isomorphic-flux-concept",
   "version": "1.0.0",
-  "description": "Project template for gulp.js",
+  "description": "a POC of using same components, stores, action and dispatcher to form a big round ball of flux happiness.",
   "author": "Riku Rouvila <riku.rouvila@gmail.com>",
   "license": "MIT",
-  "main": "gulpfile.js",
+  "main": "src/server/index.js",
   "scripts": {
     "prepublish": "bower install",
     "start": "gulp",
