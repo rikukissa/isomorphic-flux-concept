@@ -12,7 +12,7 @@ concept/tree/master/src/node_modules).
 ![Flowchart](https://raw.githubusercontent.com/rikukissa/isomorphic-flux-concept/master/meta/websocket-flow.png)
 
 ## Why?
-I wanted to see what's the extent of isomorphism possible to be accomplished with this architecture. I was expecting to hit a stone wall in some point and to realize that this can't be done for some obvious reason. It was a positive surprice to notice that this is actually possible, the implementation is fairly simple (although a bit mind bending) and the amount of environment conditionals remained almost nonexistent.
+I wanted to see what's the extent of isomorphism possible to be accomplished with this architecture. I was expecting to hit a stone wall at some point and to realize that this can't be done for some obvious reason. It was a positive surprise to notice that this is actually possible, the implementation is fairly simple (although a bit mind bending) and the amount of environment conditionals remained almost nonexistent.
 
 I have no idea if this could be applied to a real-world architecture and would definitely like to hear ideas about how it could be done, could or should I change something in the current implementation and what kind of applications would benefit from this kind of structure.
 
